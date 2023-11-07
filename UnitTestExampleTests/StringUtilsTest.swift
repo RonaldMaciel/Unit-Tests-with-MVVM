@@ -31,7 +31,7 @@ final class StringUtilsTest: XCTestCase {
         let text = "hEllo, wOrLD"
         let value = text.removeWhiteSpaces()
         
-        XCTAssert(value == "hEllo, wOrLD", "Didn't removed spaces")
+        XCTAssert(value == "hEllo,wOrLD", "Didn't removed spaces")
     }
     
 

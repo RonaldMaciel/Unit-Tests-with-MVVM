@@ -12,7 +12,8 @@ extension String {
         return self.replace(string: " ", replacement: "")
     }
     
-    func replace(string: String, replacement: String) -> String {
+    func replace(string: String, 
+                 replacement: String) -> String {
         return self.replacingOccurrences(of: string, with: replacement)
     }
     
