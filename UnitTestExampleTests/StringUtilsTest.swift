@@ -34,6 +34,16 @@ final class StringUtilsTest: XCTestCase {
         XCTAssert(value == "hEllo,wOrLD", "Didn't removed spaces")
     }
     
+    func testReplace() {
+        let text = "string"
+        let newTest = text.replace(string: "s", 
+                                   replacement: "z")
+        
+        let newTest2 = text.replace(string: "i", replacement: "y")
+        
+        XCTAssert(newTest == "ztring")
+        XCTAssert(newTest2 == "stryng")
+    }
 
 
 }
