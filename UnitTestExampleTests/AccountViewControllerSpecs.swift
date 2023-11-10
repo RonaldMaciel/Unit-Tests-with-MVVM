@@ -10,6 +10,8 @@ import Nimble
 @testable import UnitTestExample
 
 class AccountViewModelMock: AccountViewModelProtocol {
+    var instructions: String { return "" }
+    
     var loginButtonWasCalled = false
     
     func loginButtonTapped() {
@@ -19,10 +21,7 @@ class AccountViewModelMock: AccountViewModelProtocol {
     func shouldRequestLocation(showAlert: () -> (), 
                                askUserPermition: () -> (),
                                completion: () -> ()) {}
-    
-    
 }
-
 
 class AccountViewControllerSpecs: QuickSpec {
     
@@ -44,11 +43,7 @@ class AccountViewControllerSpecs: QuickSpec {
                 }
             }
 
-
-            afterEach {
-                
-            }
+            afterEach { }
         }
     }
-
 }
