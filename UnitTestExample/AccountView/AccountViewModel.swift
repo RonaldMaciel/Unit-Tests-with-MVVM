@@ -14,13 +14,17 @@ protocol AccountViewModelProtocol {
                                completion: () -> ())
 }
 
-class AccountViewModel: AccountViewModelProtocol {
+class AccountViewModel {
+    
     private let shouldUseLocation: Bool
     
     init(shouldUseLocation: Bool) {
         self.shouldUseLocation = shouldUseLocation
     }
-    
+
+}
+
+extension AccountViewModel: AccountViewModelProtocol {
     func loginButtonTapped() {
         print("Login Successful!")
     }
@@ -37,6 +41,4 @@ class AccountViewModel: AccountViewModelProtocol {
         showAlert()
         completion()
     }
-    
-    
 }
