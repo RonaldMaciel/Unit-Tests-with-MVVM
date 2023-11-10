@@ -39,7 +39,8 @@ final class StringUtilsTest: XCTestCase {
         let newTest = text.replace(string: "s", 
                                    replacement: "z")
         
-        let newTest2 = text.replace(string: "i", replacement: "y")
+        let newTest2 = text.replace(string: "i", 
+                                    replacement: "y")
         
         XCTAssert(newTest == "ztring")
         XCTAssert(newTest2 == "stryng")
