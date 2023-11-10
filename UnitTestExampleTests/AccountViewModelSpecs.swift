@@ -58,6 +58,14 @@ class AccountViewModelSpecs: QuickSpec {
                     
                 }
             }
+            
+            // Verify if ViewModel assign with determined protocol
+            context("AccountViewModelProtocol") {
+                it("Verify AccountViewModelProtocol") {
+                    sut = AccountViewModel(shouldUseLocation: false)
+                    expect(sut).to(beAKindOf(AccountViewModelProtocol.self))
+                }
+            }
         }
     }
 
