@@ -36,6 +36,27 @@ class AccountViewModelSpecs: QuickSpec {
                     expect(completion).to(equal(true))
                     
                 }
+                
+                it("Use Location False") {
+                    sut = AccountViewModel(shouldUseLocation: false)
+                    
+                    var showALert = false
+                    var askUserPermition = false
+                    var completion = false
+                    
+                    sut.shouldRequestLocation(showAlert: {
+                        showALert = true
+                    }, askUserPermition: {
+                        askUserPermition = true
+                    }, completion: {
+                        completion = true
+                    })
+                    
+                    expect(showALert).to(equal(true))
+                    expect(askUserPermition).to(equal(false))
+                    expect(completion).to(equal(true))
+                    
+                }
             }
         }
     }
