@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         
         let accountViewController = AccountViewController()
-        accountViewController.viewModel = AccountViewModel(shouldUseLocation: true)
+        accountViewController.viewModel = AccountViewModel(shouldUseLocation: true, 
+                                                           model: AccountModel(instruction: ""))
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

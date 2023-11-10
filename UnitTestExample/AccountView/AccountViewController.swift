@@ -31,6 +31,12 @@ class AccountViewController: UIViewController {
         }, completion: {
             print("Completion")
         })
+        
+        let instructionLabel = UILabel(frame: CGRect(x: 200, y: 200, width: 1000, height: 200))
+        instructionLabel.text = viewModel?.instructions
+        
+        view.addSubview(instructionLabel)
+        
     }
 }
 
