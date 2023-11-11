@@ -15,4 +15,10 @@ class AsyncProcess {
             self?.name = "ciel"
         }
     }
+    
+    func doSomething(_ completion: @escaping (String) -> ()) {
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            completion("izzy")
+        }
+    }
 }
