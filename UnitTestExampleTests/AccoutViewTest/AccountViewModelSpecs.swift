@@ -83,6 +83,24 @@ class AccountViewModelSpecs: QuickSpec {
                     expect(sut.instructions).to(equal("hello, World"))
                 }
             }
+            
+            context("Get Joke") {
+                it("With error") {
+                    sut = AccountViewModel(shouldUseLocation: true,
+                                           model: AccountModel(instruction: "hello, World"),
+                                           service: ServiceProviderMock(status: .invalidResponse))
+                    sut.getJoke()
+                    expect(sut.status).to(equal("error"))
+                }
+                
+                //it("Verify not using location") {
+                //    sut = AccountViewModel(shouldUseLocation: false,
+                //                           model: AccountModel(instruction: "hello, World"))
+                //    expect(sut.instructions).to(equal("hello, World"))
+                //}
+            }
+            
+            
         }
     }
 }

@@ -21,6 +21,9 @@
 		964564632B001FF400B5FEA0 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9645645D2B001FF400B5FEA0 /* StringUtils.swift */; };
 		964564642B001FF400B5FEA0 /* AsyncProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9645645E2B001FF400B5FEA0 /* AsyncProcess.swift */; };
 		964564672B00202600B5FEA0 /* AsyncProcessSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964564662B00202600B5FEA0 /* AsyncProcessSpec.swift */; };
+		964564692B0020A700B5FEA0 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964564682B0020A700B5FEA0 /* ServiceProvider.swift */; };
+		9645646B2B00235C00B5FEA0 /* ServiceProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9645646A2B00235C00B5FEA0 /* ServiceProviderMock.swift */; };
+		9645646E2B00253A00B5FEA0 /* ServiceProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9645646D2B00253A00B5FEA0 /* ServiceProviderSpec.swift */; };
 		96B394722B000CF700C981CD /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B394702B000CF700C981CD /* AccountModel.swift */; };
 		96B394732B000CF700C981CD /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B394712B000CF700C981CD /* AccountViewModel.swift */; };
 		96B394742B000CF700C981CD /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B3946F2B000CF600C981CD /* AccountViewController.swift */; };
@@ -69,6 +72,9 @@
 		9645645F2B001FF400B5FEA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		964564602B001FF400B5FEA0 /* AccountBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBalance.swift; sourceTree = "<group>"; };
 		964564662B00202600B5FEA0 /* AsyncProcessSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncProcessSpec.swift; sourceTree = "<group>"; };
+		964564682B0020A700B5FEA0 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		9645646A2B00235C00B5FEA0 /* ServiceProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderMock.swift; sourceTree = "<group>"; };
+		9645646D2B00253A00B5FEA0 /* ServiceProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProviderSpec.swift; sourceTree = "<group>"; };
 		96B3946F2B000CF600C981CD /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		96B394702B000CF700C981CD /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		96B394712B000CF700C981CD /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
@@ -150,6 +156,7 @@
 		960599B52AF43CA20044A68D /* UnitTestExample */ = {
 			isa = PBXGroup;
 			children = (
+				964564682B0020A700B5FEA0 /* ServiceProvider.swift */,
 				964564652B00200200B5FEA0 /* Utils */,
 				96B394752B000D0000C981CD /* AccountView */,
 				960599E62AF43CB70044A68D /* Resources */,
@@ -160,9 +167,9 @@
 		960599CC2AF43CA30044A68D /* UnitTestExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				96B394762B000D2C00C981CD /* AccountViewControllerSpecs.swift */,
-				96B394782B000D2C00C981CD /* AccountViewModelSpecs.swift */,
-				964564662B00202600B5FEA0 /* AsyncProcessSpec.swift */,
+				9645646A2B00235C00B5FEA0 /* ServiceProviderMock.swift */,
+				9645646D2B00253A00B5FEA0 /* ServiceProviderSpec.swift */,
+				9645646C2B00251400B5FEA0 /* AccoutViewTest */,
 				96B394862B000D4100C981CD /* UtilsTest */,
 			);
 			path = UnitTestExampleTests;
@@ -193,11 +200,21 @@
 			isa = PBXGroup;
 			children = (
 				964564602B001FF400B5FEA0 /* AccountBalance.swift */,
-				9645645E2B001FF400B5FEA0 /* AsyncProcess.swift */,
 				9645645F2B001FF400B5FEA0 /* SceneDelegate.swift */,
+				9645645E2B001FF400B5FEA0 /* AsyncProcess.swift */,
 				9645645D2B001FF400B5FEA0 /* StringUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9645646C2B00251400B5FEA0 /* AccoutViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				96B394762B000D2C00C981CD /* AccountViewControllerSpecs.swift */,
+				96B394782B000D2C00C981CD /* AccountViewModelSpecs.swift */,
+				964564662B00202600B5FEA0 /* AsyncProcessSpec.swift */,
+			);
+			path = AccoutViewTest;
 			sourceTree = "<group>";
 		};
 		96B394752B000D0000C981CD /* AccountView */ = {
@@ -460,6 +477,7 @@
 				964564612B001FF400B5FEA0 /* SceneDelegate.swift in Sources */,
 				96B394722B000CF700C981CD /* AccountModel.swift in Sources */,
 				964564642B001FF400B5FEA0 /* AsyncProcess.swift in Sources */,
+				964564692B0020A700B5FEA0 /* ServiceProvider.swift in Sources */,
 				96B394742B000CF700C981CD /* AccountViewController.swift in Sources */,
 				96B394732B000CF700C981CD /* AccountViewModel.swift in Sources */,
 				964564622B001FF400B5FEA0 /* AccountBalance.swift in Sources */,
@@ -472,6 +490,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9645646B2B00235C00B5FEA0 /* ServiceProviderMock.swift in Sources */,
+				9645646E2B00253A00B5FEA0 /* ServiceProviderSpec.swift in Sources */,
 				96B394792B000D2C00C981CD /* AccountViewControllerSpecs.swift in Sources */,
 				964564672B00202600B5FEA0 /* AsyncProcessSpec.swift in Sources */,
 				96B394812B000D3300C981CD /* UnitTestExampleTests.swift in Sources */,

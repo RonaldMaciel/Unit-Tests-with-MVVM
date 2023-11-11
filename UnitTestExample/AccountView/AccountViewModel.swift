@@ -13,26 +13,37 @@ protocol AccountViewModelProtocol {
                                askUserPermition: () -> (),
                                completion: () -> ())
     var instructions: String { get }
+    var status: String { get set }
 }
 
 class AccountViewModel {
     
     private let shouldUseLocation: Bool
     private var model: AccountModel
+    private let service: ServiceProviderProtocol
     
-    init(shouldUseLocation: Bool, model: AccountModel) {
+    var status: String
+    
+    init(shouldUseLocation: Bool, model: AccountModel, service: ServiceProviderProtocol = ServiceProvider()) {
         self.shouldUseLocation = shouldUseLocation
         self.model = model
+        self.service = service
+        self.status = ""
+    }
+    
+    func getJoke() {
+        service.getJoke { result, err in
+            if err != nil {
+                self.status = "error"
+                return
+            }
+            
+            self.status = result![0]
+        }
     }
 }
 
 extension AccountViewModel: AccountViewModelProtocol {
-    var instructions: String {
-        if shouldUseLocation {
-            return model.instruction + " with location"
-        }
-        return model.instruction
-    }
     
     func loginButtonTapped() {
         print("Login Successful!")
@@ -50,4 +61,12 @@ extension AccountViewModel: AccountViewModelProtocol {
         showAlert()
         completion()
     }
+    
+    var instructions: String {
+        if shouldUseLocation {
+            return model.instruction + " with location"
+        }
+        return model.instruction
+    }
+
 }

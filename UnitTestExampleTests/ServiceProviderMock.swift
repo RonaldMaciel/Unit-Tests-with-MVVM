@@ -20,7 +20,7 @@ class ServiceProviderMock: ServiceProviderProtocol {
         self.status = status
     }
     
-    func getJoke(_ completion: @escaping ([String]?, UnitTestExample.JokeError?) -> ()) {
+    func getJoke(_ completion: @escaping ([String]?, JokeError?) -> ()) {
         switch status {
         case .sucess:
             completion(["animal", "career", "celebrity", "dev", "explicit", "fashion", "food", "history", "money", "movie", "music", "political", "religion", "science", "sport", "travel"], nil)
